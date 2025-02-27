@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate MCQs</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Generate MCQs</h1>
+        <p class="lead">Upload a PDF or TXT file to generate multiple-choice questions.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload File (PDF/TXT):</label>
+                <input type="file" class="form-control-file" id="file" name="files[]" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="num_questions">Number of Questions:</label>
+                <select class="form-control" id="num_questions" name="num_questions">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bloom_level">Select Bloom's Taxonomy Level:</label>
+                <select class="form-control" id="bloom_level" name="bloom_level">
+                    <option value="Remembering">Remembering</option>
+                    <option value="Understanding">Understanding</option>
+                    <option value="Applying">Applying</option>
+                    <option value="Analyzing">Analyzing</option>
+                    <option value="Evaluating">Evaluating</option>
+                    <option value="Creating">Creating</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate MCQs</button>
+        </form>
+    </div>
+</body>
+</html>
